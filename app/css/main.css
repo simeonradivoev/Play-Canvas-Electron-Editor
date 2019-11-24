@@ -1,0 +1,62 @@
+:root{
+    --editor-background:#1E1E1E;
+    --editor-foreground:#D4D4D4;
+    --editor-inactiveSelectionBackground:#3A3D41;
+    --menu-background:#252526;
+    --menu-foreground:#CCCCCC;
+    --project-height:20%;
+    --hierarchy-width:15%;
+    --inspector-width:15%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#viewport {
+    position: absolute;
+    left: var(--hierarchy-width);
+    right: var(--inspector-width);
+    bottom: var(--project-height);
+    top: 0;
+    background-color: var(--editor-background);
+}
+
+#viewport:focus {
+    outline: unset;
+}
+
+#viewport:focus canvas {
+    outline-width: 2px;
+    outline-offset: -2px;
+    outline-color: rgba(0, 122, 204, 0.5);
+    outline-style: solid;
+}
+
+#project {
+    position: absolute;
+    left: 0;
+    right: var(--inspector-width);
+    bottom: 0;
+    height: var(--project-height);
+    background-color: var(--editor-background);
+}
+
+#hierarchy {
+    position: absolute;
+    left: 0;
+    width: var(--hierarchy-width);
+    bottom: var(--project-height);
+    top: 0;
+    background-color: var(--editor-inactiveSelectionBackground);
+}
+
+#inspector {
+    position: absolute;
+    right: 0;
+    width: var(--inspector-width);
+    bottom: 0;
+    top: 0;
+    background-color: var(--editor-inactiveSelectionBackground);
+}
